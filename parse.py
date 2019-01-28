@@ -1,14 +1,22 @@
+import os
 import sys
 from pkgutil import simplegeneric
 import json
 import requests
 import csv
+from flask import Flask, render_template, request, send_from_directory, current_app
+
 
 #TODO:
+# 1."BUILD FRONTEND"
+#  -> Figure out automation
+#  -> Create file that will automatically download with button click
+
 # 1.ENSURE IT WORKS WITH ALL INPUTS
 # 2."ENTER FILTRATION ABILITIES"
 # 3."ALLOW FOR MORE OR LESS FIELDS"
-# 4."BUILD FRONTEND"
+
+app = Flask(__name__);
 
 URL = "http://172.27.255.228:9200/version_string_sda/_search?scroll=1m";
 SIZE = 100;
@@ -62,7 +70,7 @@ def filter_data(data, current_index):
             lst.append(entry["_source"])
     return lst;
 
-def create_csv(lst, filename = "raw_data.csv"):
+def create_csv(lst, filename = "csv/raw_data.csv"):
     keys = lst[0].keys();
     with open(filename, 'w') as output_file:
         dict_writer = csv.DictWriter(output_file, keys)
@@ -74,13 +82,23 @@ def create_csv(lst, filename = "raw_data.csv"):
                 dic[key] = entry.get(key);
                else:
                 dic[key] = "NULL"
-            dict_writer.writerow(dic);
+        dict_writer.writerow(dic);
+
+    return filename;
+
+@app.route('/')
+def render_webpage():
+    return render_template("WebApp.html")
+
+@app.route('/download', methods = ["GET", "POST"])
+def download():
+    return send_from_directory(directory = 'csv', filename = 'raw_data.csv')
 
 
 
-def main():
-    print('Please insert Kibana request: ')
-    message = sys.stdin.readlines()
+@app.route('/python', methods = ['POST'])
+def parse():
+    message = request.form['message'];
     json_str = ''.join(message);
     strip_whitespace(json_str);
     json_obj = json.loads(json_str);
@@ -88,6 +106,9 @@ def main():
     r = requests.post(url = URL, json = json_obj);
     data = r.json();
     lst = filter_data(data, current_index);
-    create_csv(lst);
+    filename = create_csv(lst);
+    return render_template("Download_Ready_Web_App.html")
 
-main();
+
+if __name__ == "__main__":
+    app.run(port = 3000, debug = True)

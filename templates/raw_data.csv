@@ -1,0 +1,2 @@
+theater,workgroup,title,company,feature,contract,tech_dnac,report_date,tech,script_name,time,sr_id,_id,sr_severity,subtech,product_family
+APAC,NULL,SDADS:WS-C3850-48P-E-When updating Ros display BUG,SDADS_COMPANY_LTD,SDA,201086999,Others,2018-03-30,LAN Switching,sda_new_case_1,2018-03-30T03:08:03.212Z,684233392,5abdaa13199baf001636edb1,3,Cat3850___Switching_Issues,C3850

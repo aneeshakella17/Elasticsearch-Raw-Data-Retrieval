@@ -5,6 +5,7 @@ import json
 import requests
 import csv
 from flask import Flask, render_template, request, send_from_directory, current_app
+import webbrowser
 
 
 #TODO:
@@ -48,8 +49,6 @@ def add_hits(json_obj):
     }
     }
 
-
-
     dic = json_obj["aggs"];
     current_index = 2;
 
@@ -71,6 +70,7 @@ def filter_data(data, current_index):
     return lst;
 
 def create_csv(lst, filename = "csv/raw_data.csv"):
+    print(len(lst))
     keys = lst[0].keys();
     with open(filename, 'w') as output_file:
         dict_writer = csv.DictWriter(output_file, keys)
@@ -79,10 +79,13 @@ def create_csv(lst, filename = "csv/raw_data.csv"):
             dic = {}
             for key in keys:
                if(entry.get(key)):
-                dic[key] = entry.get(key);
+                try:
+                    dic[key] = entry.get(key).encode('ascii', 'ignore').decode('ascii');
+                except:
+                    dic[key] = entry.get(key);
                else:
-                dic[key] = "NULL"
-        dict_writer.writerow(dic);
+                dic[key] = 'NULL'
+            dict_writer.writerow(dic);
 
     return filename;
 
@@ -99,16 +102,18 @@ def download():
 @app.route('/python', methods = ['POST'])
 def parse():
     message = request.form['message'];
+    # message = sys.stdin.readlines()
     json_str = ''.join(message);
     strip_whitespace(json_str);
     json_obj = json.loads(json_str);
     current_index = add_hits(json_obj)
-    r = requests.post(url = URL, json = json_obj);
+    r = requests.post(url = URL, json = json_obj)
     data = r.json();
     lst = filter_data(data, current_index);
     filename = create_csv(lst);
     return render_template("Download_Ready_Web_App.html")
 
-
 if __name__ == "__main__":
+    webbrowser.open('http://localhost:3000', new=1)
     app.run(port = 3000, debug = True)
+

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dccdf6ee-c010-4211-940f-17423b284846" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/raw_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/raw_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+            <state relative-caret-position="-595">
+              <caret line="173" column="113" lean-forward="true" selection-start-line="173" selection-end-line="174" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -51,6 +49,8 @@
       <find>filte</find>
       <find>get_Fields</find>
       <find>filter_Data</find>
+      <find>current_fields</find>
+      <find>total_field_number</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,7 +71,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="595" />
+    <option name="x" value="336" />
     <option name="y" value="23" />
     <option name="width" value="1098" />
     <option name="height" value="784" />
@@ -155,7 +155,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="595" y="23" width="1098" height="784" extended-state="0" />
+    <frame x="336" y="23" width="1098" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49561402" weight="0.3020031" />
@@ -242,8 +242,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+        <state relative-caret-position="-595">
+          <caret line="173" column="113" lean-forward="true" selection-start-line="173" selection-end-line="174" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

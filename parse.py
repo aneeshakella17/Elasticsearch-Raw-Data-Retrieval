@@ -7,22 +7,16 @@ import csv
 from flask import Flask, render_template, request, send_from_directory, current_app
 import webbrowser
 
-
 #TODO:
-# 1."BUILD FRONTEND"
-#  -> Figure out automation
-#  -> Create file that will automatically download with button click
-
-# 1.ENSURE IT WORKS WITH ALL INPUTS
-# 2."ENTER FILTRATION ABILITIES"
-# 3."ALLOW FOR MORE OR LESS FIELDS"
+#CLEAN UP THE CODE
 
 app = Flask(__name__);
 
 URL = "http://172.27.255.228:9200/version_string_sda/_search?scroll=1m";
 SIZE = 100;
-total_field_number = 0;
-my_json, current_fields, current_specific_fields = {}, [], []
+my_json, current_fields = {}, []
+
+
 @simplegeneric
 def get_items(obj):
     while False: # no items, a scalar object
@@ -36,6 +30,8 @@ def _(obj):
 def _(obj):
     return enumerate(obj)
 
+
+#Remove whitespace from strings for standardization purposes
 def strip_whitespace(json_data):
     for key, value in get_items(json_data):
         if hasattr(value, 'strip'): # json string
@@ -43,7 +39,14 @@ def strip_whitespace(json_data):
         else:
             strip_whitespace(value)
 
+
+#Appendage added to original Kibana request to retrieve raw data. This piece should be added to the greatest aggregation number found
+#within the data. For instance, if there are 3 subdivisions (subtech, theater, and amec), there will be a subdictionary
+#within the data response called "4". The equation is thus (1 + # of subdivisions). The function searcehs for this greatest aggregation number,
+#finds the dictionary associated with the number, and then adds the appendage.
+
 def add_hits(json_obj):
+
     hits_append = {"by_top_hit": {
         "top_hits": {
             "size": SIZE
@@ -51,34 +54,40 @@ def add_hits(json_obj):
     }
     }
 
-    dic = json_obj["aggs"];
+
     current_index = 2;
-    dic = dic[str(current_index)]
+    dic = json_obj["aggs"][str(current_index)];
+
     if (dic.get("aggs")):
         dic = dic["aggs"];
-    current_index += 1;
 
-    while(dic.get(str(current_index))):
-        dic = dic[str(current_index)]
+
+    while(dic.get(str(current_index + 1))):
+        dic = dic[str(current_index + 1)]
         if(dic.get("aggs")):
             dic = dic["aggs"];
+
         current_index += 1;
 
     dic["by_top_hit"] = hits_append["by_top_hit"];
 
-    return current_index - 1;
+    return current_index;
 
+
+
+#There are two functions listed here. After we send the request modified by add_hits, we get the response. Now, this
+#response needs to be analyzed to collect the raw data. Ultimately, this can be thought of having to collect the leaf nodes at the bottom of the tree.
+#To do this, we utilize the recursive for-loop strategy as found in recurse. Once we get to the leaf node, we utilize populate_list
+#to gather the individual data_entries
 def filter_data(data, current_index, request):
+
     lst = [];
 
     def populate_list(bucket):
-
-
-
         for entry in bucket["by_top_hit"]["hits"]["hits"]:
             for key in request.keys():
-                print(key, entry["_source"].get(key), request[key])
-                if(request[key] == "All keys"):
+
+                if(request[key] == "all keys"):
                     lst.append(entry["_source"]);
                     break;
                 elif(entry["_source"].get(key) == None):
@@ -88,6 +97,7 @@ def filter_data(data, current_index, request):
             else:
                 lst.append(entry["_source"]);
 
+
     def recurse(buckets, index):
         for bucket in buckets:
             if(index == current_index):
@@ -96,40 +106,58 @@ def filter_data(data, current_index, request):
                 recurse(bucket[str(index + 1)]["buckets"], index + 1);
 
 
-
     buckets = data["aggregations"]["2"]["buckets"]
     recurse(buckets, 2)
     return lst;
 
+
+#Gather the specific subdivisions (theater, subtech, ...)
 def get_fields(json_obj):
+
     dic = json_obj["aggs"];
     current_index = 2;
     fields = [];
+
     while (dic.get(str(current_index))):
+
         dic = dic[str(current_index)];
         fields.append(dic["terms"]["field"]);
+
         if(dic.get("aggs")):
             dic = dic["aggs"]
+
         current_index += 1;
+
     return fields;
 
+#Generate the output CSV file
 def create_csv(lst, filename = "csv/raw_data.csv"):
-    print(len(lst))
-    keys = lst[0].keys();
-    with open(filename, 'w') as output_file:
-        dict_writer = csv.DictWriter(output_file, keys)
-        dict_writer.writeheader();
-        for entry in lst:
-            dic = {}
-            for key in keys:
-               if(entry.get(key)):
-                try:
-                    dic[key] = entry.get(key).encode('ascii', 'ignore').decode('ascii');
-                except:
-                    dic[key] = entry.get(key);
-               else:
-                dic[key] = 'NULL'
-            dict_writer.writerow(dic);
+
+
+    if(len(lst) > 0):
+
+        keys = lst[0].keys();
+
+        with open(filename, 'w') as output_file:
+            dict_writer = csv.DictWriter(output_file, keys)
+            dict_writer.writeheader();
+
+            for entry in lst:
+                dic = {}
+
+                for key in keys:
+                   if(entry.get(key)):
+
+                    try:
+                        dic[key] = entry.get(key).encode('ascii', 'ignore').decode('ascii');
+                    except:
+                        dic[key] = entry.get(key);
+
+
+                   else:
+                    dic[key] = 'NULL'
+
+                dict_writer.writerow(dic);
 
     return filename;
 
@@ -141,7 +169,10 @@ def render_webpage():
 def download():
     return send_from_directory(directory = 'csv', filename = 'raw_data.csv')
 
-def get_data_fields(data, fields, current_index):
+
+#Analyzes the response to figure out which data the user wants to analyze more closely. For instance, within subtech,
+#the user can choose to analyze the different types of subtechs (assurance, security, ...), theaters (AMER, EPAC)
+def get_data_fields(data, current_index):
 
     def recurse(buckets, index, lst_of_fields = []):
 
@@ -162,20 +193,25 @@ def get_data_fields(data, fields, current_index):
     recurse(buckets, index, lst_of_fields)
     return lst_of_fields;
 
+
+#After the scrollbar section has been complete, the data is parsed for the selected sections.
 @app.route('/filter', methods = ['POST'])
 def filter():
     request_dic = {};
 
     for i, field in enumerate(current_fields):
-        request_dic[field] = request.form.get(str(i)).capitalize();
-        print(request_dic[field])
+        request_dic[field] = request.form.get(str(i));
 
-    lst = filter_data(my_json, total_field_number + 1, request_dic)
-    filename = create_csv(lst);
+    lst = filter_data(my_json, len(current_fields) + 1, request_dic)
+    create_csv(lst);
     return render_template("Download_Ready_Web_App.html")
 
+
+#Request the initial message from the client, gather the data fields, and then return the scrollbars so the user
+#can decide how to filter the data )
 @app.route('/python', methods = ['POST'])
 def parse():
+
     message = request.form['message'];
 
     json_str = ''.join(message);
@@ -192,9 +228,9 @@ def parse():
     names = [];
     for i in range(0, len(fields)):
         names.append(str(i));
-    global total_field_number, current_fields, current_specific_fields, my_json;
 
-    total_field_number = len(fields);
+    global current_fields, my_json;
+
     my_json = data
     current_fields = fields;
 

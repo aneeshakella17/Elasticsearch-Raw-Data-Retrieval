@@ -21,6 +21,8 @@ app = Flask(__name__);
 
 URL = "http://172.27.255.228:9200/version_string_sda/_search?scroll=1m";
 SIZE = 100;
+total_field_number = 0;
+my_json, current_fields, current_specific_fields = {}, [], []
 @simplegeneric
 def get_items(obj):
     while False: # no items, a scalar object
@@ -51,23 +53,47 @@ def add_hits(json_obj):
 
     dic = json_obj["aggs"];
     current_index = 2;
+    dic = dic[str(current_index)]
+    if (dic.get("aggs")):
+        dic = dic["aggs"];
+    current_index += 1;
 
-    if(dic.get(str(current_index))):
+    while(dic.get(str(current_index))):
         dic = dic[str(current_index)]
         if(dic.get("aggs")):
             dic = dic["aggs"];
-            dic["by_top_hit"] = hits_append["by_top_hit"];
         current_index += 1;
 
+    dic["by_top_hit"] = hits_append["by_top_hit"];
 
     return current_index - 1;
 
-def filter_data(data, current_index):
+def filter_data(data, current_index, request):
     lst = [];
-    for category in data["aggregations"][str(current_index)]["buckets"]:
-        for entry in category["by_top_hit"]["hits"]["hits"]:
-            lst.append(entry["_source"])
+    for bucket in data["aggregations"][str(current_index)]["buckets"]:
+        for entry in bucket["by_top_hit"]["hits"]["hits"]:
+            for key in request.keys():
+                print(request[key])
+                if(request[key] == "All keys"):
+                    lst.append(entry["_source"]);
+                    break;
+                elif(entry["_source"].get(key) != request.get(key) or entry["_source"].get(key) == None):
+                    break;
+            else:
+                lst.append(entry["_source"]);
     return lst;
+
+def get_fields(json_obj):
+    dic = json_obj["aggs"];
+    current_index = 2;
+    fields = [];
+    while (dic.get(str(current_index))):
+        dic = dic[str(current_index)];
+        fields.append(dic["terms"]["field"]);
+        if(dic.get("aggs")):
+            dic = dic["aggs"]
+        current_index += 1;
+    return fields;
 
 def create_csv(lst, filename = "csv/raw_data.csv"):
     print(len(lst))
@@ -97,21 +123,66 @@ def render_webpage():
 def download():
     return send_from_directory(directory = 'csv', filename = 'raw_data.csv')
 
+def get_data_fields(data, fields, current_index):
 
+    def recurse(buckets, index, lst_of_fields = []):
+
+        for bucket in buckets:
+            if(index < current_index):
+                dic = bucket[str(index + 1)]["buckets"]
+                recurse(dic, index + 1, lst_of_fields);
+            lst_of_fields[index - 2][bucket["key"]] = 0;
+
+
+    lst_of_fields = [];
+    for i in range(0, current_index - 1):
+        lst_of_fields.append({});
+
+    index = 2;
+
+    buckets = data["aggregations"][str(index)]["buckets"]
+    recurse(buckets, index, lst_of_fields)
+    return lst_of_fields;
+
+@app.route('/filter', methods = ['POST'])
+def filter():
+    request_dic = {};
+
+    for i, field in enumerate(current_fields):
+        request_dic[field] = request.form.get(str(i)).capitalize();
+        print(request_dic[field])
+
+    lst = filter_data(my_json, total_field_number + 1, request_dic)
+    filename = create_csv(lst);
+    return render_template("Download_Ready_Web_App.html")
 
 @app.route('/python', methods = ['POST'])
 def parse():
     message = request.form['message'];
-    # message = sys.stdin.readlines()
+
     json_str = ''.join(message);
     strip_whitespace(json_str);
     json_obj = json.loads(json_str);
+
+    fields = get_fields(json_obj);
+
     current_index = add_hits(json_obj)
     r = requests.post(url = URL, json = json_obj)
     data = r.json();
-    lst = filter_data(data, current_index);
-    filename = create_csv(lst);
-    return render_template("Download_Ready_Web_App.html")
+
+    data_fields = get_data_fields(data, fields, current_index);
+    names = [];
+    for i in range(0, len(fields)):
+        names.append(str(i));
+    global total_field_number, current_fields, current_specific_fields, my_json;
+
+    total_field_number = len(fields);
+    my_json = data
+    current_fields = fields;
+
+
+    return render_template("Scrollbars.html", num_of_fields = len(fields), data_fields = data_fields, names = names)
+
 
 if __name__ == "__main__":
     webbrowser.open('http://localhost:3000', new=1)

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scrollbars</title>
+</head>
+<body>
+
+    <form action="/filter" method="post">
+
+        {% for num in range(num_of_fields) %}
+            <select name = "{{num}}">
+                <option> ALL KEYS </option>
+                {% for key in data_fields[num].keys() %}
+                    <option> {{key|e}} </option>
+                {% endfor %}
+            </select>
+        {% endfor %}
+
+        <input type="submit" name = "form" value="Submit"/>
+
+    </form>
+
+</body>
+</html>

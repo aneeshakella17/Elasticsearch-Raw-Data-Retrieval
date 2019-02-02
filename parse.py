@@ -70,17 +70,35 @@ def add_hits(json_obj):
 
 def filter_data(data, current_index, request):
     lst = [];
-    for bucket in data["aggregations"][str(current_index)]["buckets"]:
+
+    def populate_list(bucket):
+
+
+
         for entry in bucket["by_top_hit"]["hits"]["hits"]:
             for key in request.keys():
-                print(request[key])
+                print(key, entry["_source"].get(key), request[key])
                 if(request[key] == "All keys"):
                     lst.append(entry["_source"]);
                     break;
-                elif(entry["_source"].get(key) != request.get(key) or entry["_source"].get(key) == None):
+                elif(entry["_source"].get(key) == None):
+                    break;
+                elif(entry["_source"].get(key).lower() != request.get(key).lower()):
                     break;
             else:
                 lst.append(entry["_source"]);
+
+    def recurse(buckets, index):
+        for bucket in buckets:
+            if(index == current_index):
+                populate_list(bucket);
+            else:
+                recurse(bucket[str(index + 1)]["buckets"], index + 1);
+
+
+
+    buckets = data["aggregations"]["2"]["buckets"]
+    recurse(buckets, 2)
     return lst;
 
 def get_fields(json_obj):

@@ -8,12 +8,11 @@ from flask import Flask, render_template, request, send_from_directory, current_
 import webbrowser
 
 #TODO:
-#CLEAN UP THE CODE
-
+#STILL NEED TO ENSURE IT WORKS FOR ALL INPUT
 app = Flask(__name__);
 
 URL = "http://172.27.255.228:9200/version_string_sda/_search?scroll=1m";
-SIZE = 100;
+SIZE = 10000;
 my_json, current_fields = {}, []
 
 
@@ -83,18 +82,20 @@ def filter_data(data, current_index, request):
 
     lst = [];
 
-    def populate_list(bucket):
-        for entry in bucket["by_top_hit"]["hits"]["hits"]:
-            for key in request.keys():
 
-                if(request[key] == "all keys"):
-                    lst.append(entry["_source"]);
+    def populate_list(bucket):
+        entry_count = 0;
+        for entry in bucket["by_top_hit"]["hits"]["hits"]:
+            count = len(request.keys());
+            for key in request.keys():
+                if(request[key] == "ALL KEYS"):
+                    count -= 1;
+                elif(entry['_source'].get(key) == None):
                     break;
-                elif(entry["_source"].get(key) == None):
-                    break;
-                elif(entry["_source"].get(key).lower() != request.get(key).lower()):
-                    break;
-            else:
+                elif(entry['_source'][key].lower() == request[key].lower()):
+                    count -= 1;
+
+            if(count == 0):
                 lst.append(entry["_source"]);
 
 
@@ -104,7 +105,6 @@ def filter_data(data, current_index, request):
                 populate_list(bucket);
             else:
                 recurse(bucket[str(index + 1)]["buckets"], index + 1);
-
 
     buckets = data["aggregations"]["2"]["buckets"]
     recurse(buckets, 2)
@@ -134,11 +134,10 @@ def get_fields(json_obj):
 def create_csv(lst, filename = "csv/raw_data.csv"):
 
 
-    if(len(lst) > 0):
+    with open(filename, 'w') as output_file:
+        if (len(lst) > 0):
 
-        keys = lst[0].keys();
-
-        with open(filename, 'w') as output_file:
+            keys = lst[0].keys();
             dict_writer = csv.DictWriter(output_file, keys)
             dict_writer.writeheader();
 
@@ -146,18 +145,20 @@ def create_csv(lst, filename = "csv/raw_data.csv"):
                 dic = {}
 
                 for key in keys:
-                   if(entry.get(key)):
+                    if (entry.get(key)):
 
-                    try:
-                        dic[key] = entry.get(key).encode('ascii', 'ignore').decode('ascii');
-                    except:
-                        dic[key] = entry.get(key);
+                        try:
+                            dic[key] = entry.get(key).encode('ascii', 'ignore').decode('ascii');
+                        except:
+                            dic[key] = entry.get(key);
 
 
-                   else:
-                    dic[key] = 'NULL'
+                    else:
+                        dic[key] = 'NULL'
 
                 dict_writer.writerow(dic);
+        else:
+            pass;
 
     return filename;
 
@@ -202,7 +203,8 @@ def filter():
     for i, field in enumerate(current_fields):
         request_dic[field] = request.form.get(str(i));
 
-    lst = filter_data(my_json, len(current_fields) + 1, request_dic)
+    lst = filter_data(my_json, len(current_fields) + 1, request_dic);
+    print("LST", len(lst))
     create_csv(lst);
     return render_template("Download_Ready_Web_App.html")
 
@@ -220,11 +222,13 @@ def parse():
 
     fields = get_fields(json_obj);
 
+
     current_index = add_hits(json_obj)
     r = requests.post(url = URL, json = json_obj)
     data = r.json();
 
-    data_fields = get_data_fields(data, fields, current_index);
+
+    data_fields = get_data_fields(data, current_index);
     names = [];
     for i in range(0, len(fields)):
         names.append(str(i));

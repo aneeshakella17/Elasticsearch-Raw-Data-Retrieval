@@ -11,8 +11,8 @@ import webbrowser
 #STILL NEED TO ENSURE IT WORKS FOR ALL INPUT
 app = Flask(__name__);
 
-URL = "http://172.27.255.228:9200/version_string_sda/_search?scroll=1m";
-SIZE = 10000;
+URL = "http://172.27.255.228:9200/_search?scroll=1m";
+SIZE = 10;
 my_json, current_fields = {}, []
 
 
@@ -84,7 +84,6 @@ def filter_data(data, current_index, request):
 
 
     def populate_list(bucket):
-        entry_count = 0;
         for entry in bucket["by_top_hit"]["hits"]["hits"]:
             count = len(request.keys());
             for key in request.keys():
@@ -102,7 +101,10 @@ def filter_data(data, current_index, request):
     def recurse(buckets, index):
         for bucket in buckets:
             if(index == current_index):
-                populate_list(bucket);
+                if(type(bucket) is str or type(bucket) is unicode):
+                    populate_list(buckets[bucket]);
+                else:
+                    populate_list(bucket);
             else:
                 recurse(bucket[str(index + 1)]["buckets"], index + 1);
 
@@ -121,7 +123,21 @@ def get_fields(json_obj):
     while (dic.get(str(current_index))):
 
         dic = dic[str(current_index)];
-        fields.append(dic["terms"]["field"]);
+
+        print(current_index);
+        print(dic.keys())
+
+        if(dic.get("terms") != None):
+            fields.append(dic["terms"]["field"]);
+        elif(dic.get("filters")):
+           for key in dic["filters"]["filters"]:
+               colon_index = key.index(':')
+               if(colon_index == -1):
+                   break;
+               else:
+                   fields.append(key[0:colon_index]);
+                   break;
+
 
         if(dic.get("aggs")):
             dic = dic["aggs"]
@@ -175,19 +191,24 @@ def download():
 #the user can choose to analyze the different types of subtechs (assurance, security, ...), theaters (AMER, EPAC)
 def get_data_fields(data, current_index):
 
-    def recurse(buckets, index, lst_of_fields = []):
-
+    def recurse(buckets, index, lst_of_fields):
         for bucket in buckets:
             if(index < current_index):
                 dic = bucket[str(index + 1)]["buckets"]
                 recurse(dic, index + 1, lst_of_fields);
-            lst_of_fields[index - 2][bucket["key"]] = 0;
+
+            if(type(bucket) is str or type(bucket) is unicode):
+                colon_index = bucket.index(':');
+                bucket = bucket[(colon_index + 1)::];
+                bucket = bucket[1:-1];
+                lst_of_fields[index - 2][bucket] = 0
+            else:
+                lst_of_fields[index - 2][bucket["key"]] = 0;
 
 
     lst_of_fields = [];
     for i in range(0, current_index - 1):
         lst_of_fields.append({});
-
     index = 2;
 
     buckets = data["aggregations"][str(index)]["buckets"]
@@ -204,8 +225,8 @@ def filter():
         request_dic[field] = request.form.get(str(i));
 
     lst = filter_data(my_json, len(current_fields) + 1, request_dic);
-    print("LST", len(lst))
     create_csv(lst);
+
     return render_template("Download_Ready_Web_App.html")
 
 
@@ -222,13 +243,14 @@ def parse():
 
     fields = get_fields(json_obj);
 
-
+    print(fields);
     current_index = add_hits(json_obj)
+
     r = requests.post(url = URL, json = json_obj)
     data = r.json();
 
-
     data_fields = get_data_fields(data, current_index);
+
     names = [];
     for i in range(0, len(fields)):
         names.append(str(i));
@@ -237,7 +259,6 @@ def parse():
 
     my_json = data
     current_fields = fields;
-
 
     return render_template("Scrollbars.html", num_of_fields = len(fields), data_fields = data_fields, names = names)
 

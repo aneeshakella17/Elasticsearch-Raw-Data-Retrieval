@@ -4,16 +4,20 @@ from pkgutil import simplegeneric
 import json
 import requests
 import csv
+from datetime import date
 from flask import Flask, render_template, request, send_from_directory, current_app
 import webbrowser
+import re
 
 #TODO:
 #STILL NEED TO ENSURE IT WORKS FOR ALL INPUT
 app = Flask(__name__);
 
 URL = "http://172.27.255.228:9200/_search?scroll=1m";
+
 SIZE = 10;
 my_json, current_fields = {}, []
+
 
 
 @simplegeneric
@@ -82,17 +86,41 @@ def filter_data(data, current_index, request):
 
     lst = [];
 
+    def compare_two_dates(date1, date2):
+        date1 = date1.split('-');
+        date2 = date2.split('-');
+        a = date(int(date1[0]), int(date1[1]), int(date1[2]));
+        b = date(int(date2[0]), int(date2[1]), int(date2[2]));
+        return (a - b).days;
+
+
+
 
     def populate_list(bucket):
         for entry in bucket["by_top_hit"]["hits"]["hits"]:
             count = len(request.keys());
             for key in request.keys():
-                if(request[key] == "ALL KEYS"):
+                if(key == "report_date" and request[key] != "ALL_KEYS"):
+                    try:
+                     days = compare_two_dates(entry['_source'][key], request[key])
+                    except:
+                        t_index = entry['_source'][key].index('T')
+                        report_date = entry['_source'][key][0:t_index]
+                        days = compare_two_dates(report_date, request[key]);
+
+                    if(days >= 0 and days <= 7):
+                        count -= 1;
+                    else:
+                        break;
+
+                elif(request[key] == "ALL KEYS"):
                     count -= 1;
                 elif(entry['_source'].get(key) == None):
                     break;
                 elif(entry['_source'][key].lower() == request[key].lower()):
                     count -= 1;
+                elif(re.match(request[key].lower(), entry['_source'][key].lower()) != None):
+                    count -=1;
 
             if(count == 0):
                 lst.append(entry["_source"]);
@@ -124,8 +152,7 @@ def get_fields(json_obj):
 
         dic = dic[str(current_index)];
 
-        print(current_index);
-        print(dic.keys())
+
 
         if(dic.get("terms") != None):
             fields.append(dic["terms"]["field"]);
@@ -137,7 +164,8 @@ def get_fields(json_obj):
                else:
                    fields.append(key[0:colon_index]);
                    break;
-
+        elif(dic.get("date_histogram")):
+            fields.append("report_date");
 
         if(dic.get("aggs")):
             dic = dic["aggs"]
@@ -200,10 +228,16 @@ def get_data_fields(data, current_index):
             if(type(bucket) is str or type(bucket) is unicode):
                 colon_index = bucket.index(':');
                 bucket = bucket[(colon_index + 1)::];
-                bucket = bucket[1:-1];
+                if(bucket[0] == '\''):
+                    bucket = bucket[1:-1];
                 lst_of_fields[index - 2][bucket] = 0
             else:
-                lst_of_fields[index - 2][bucket["key"]] = 0;
+                if(bucket.get("key_as_string")):
+                    t_index = bucket["key_as_string"].index('T')
+                    report_date = bucket["key_as_string"][0:t_index];
+                    lst_of_fields[index - 2][report_date] = 0;
+                else:
+                    lst_of_fields[index - 2][bucket["key"]] = 0;
 
 
     lst_of_fields = [];
@@ -242,7 +276,6 @@ def parse():
     json_obj = json.loads(json_str);
 
     fields = get_fields(json_obj);
-
     current_index = add_hits(json_obj)
 
     r = requests.post(url = URL, json = json_obj)
@@ -251,6 +284,7 @@ def parse():
     data_fields = get_data_fields(data, current_index);
 
     sorted_data_fields = [];
+
     for field_section in data_fields:
         sorted_data_fields.append(sorted(field_section.keys()))
 

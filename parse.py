@@ -243,13 +243,16 @@ def parse():
 
     fields = get_fields(json_obj);
 
-    print(fields);
     current_index = add_hits(json_obj)
 
     r = requests.post(url = URL, json = json_obj)
     data = r.json();
 
     data_fields = get_data_fields(data, current_index);
+
+    sorted_data_fields = [];
+    for field_section in data_fields:
+        sorted_data_fields.append(sorted(field_section.keys()))
 
     names = [];
     for i in range(0, len(fields)):
@@ -260,7 +263,7 @@ def parse():
     my_json = data
     current_fields = fields;
 
-    return render_template("Scrollbars.html", num_of_fields = len(fields), data_fields = data_fields, names = names)
+    return render_template("Scrollbars.html", num_of_fields = len(fields), data_fields = sorted_data_fields, names = names)
 
 
 if __name__ == "__main__":

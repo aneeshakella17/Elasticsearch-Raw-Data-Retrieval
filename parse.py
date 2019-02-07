@@ -228,7 +228,7 @@ def get_data_fields(data, current_index):
             if(type(bucket) is str or type(bucket) is unicode):
                 colon_index = bucket.index(':');
                 bucket = bucket[(colon_index + 1)::];
-                if(bucket[0] == '\''):
+                if(bucket[0] == '\'' or bucket[0] == '"'):
                     bucket = bucket[1:-1];
                 lst_of_fields[index - 2][bucket] = 0
             else:

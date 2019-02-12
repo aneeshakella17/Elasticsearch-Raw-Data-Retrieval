@@ -3,8 +3,108 @@
   <component name="ChangeListManager">
     <list default="true" id="dccdf6ee-c010-4211-940f-17423b284846" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/certifi/cacert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/ctypes/macholib/README.ctypes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/ctypes/macholib/fetch_macholib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/ctypes/macholib/fetch_macholib.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/distutils/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/email/architecture.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/markupsafe/_speedups.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/pydoc_data/_pydoc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/FONT_LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/console.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/debugger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/less.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/more.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/source.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/collect/werkzeug/debug/shared/ubuntu.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/python37.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bdist.macosx-10.6-intel/python3.7-standalone/app/temp/markupsafe/_speedups.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/csv/raw_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/raw_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/Python.framework/Python" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/Python.framework/Resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/Python.framework/Versions/3.7/Python" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/Python.framework/Versions/3.7/Resources/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/Python.framework/Versions/3.7/include/python3.7m/pyconfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/Python.framework/Versions/3.7/lib/python3.7/config-3.7m-darwin/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/Python.framework/Versions/Current" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/libcrypto.1.1.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Frameworks/libssl.1.1.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/MacOS/parse" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/MacOS/python" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/PkgInfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/PythonApplet.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/__boot__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/__error__.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/include/python3.7m/pyconfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/config-3.7m-darwin/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/config-3.7m-darwin/Setup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/config-3.7m-darwin/Setup.local" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_asyncio.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_bisect.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_blake2.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_bz2.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_codecs_cn.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_codecs_hk.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_codecs_iso2022.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_codecs_jp.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_codecs_kr.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_codecs_tw.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_contextvars.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_csv.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_ctypes.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_datetime.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_dbm.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_decimal.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_hashlib.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_heapq.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_json.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_lzma.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_md5.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_multibytecodec.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_multiprocessing.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_opcode.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_pickle.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_posixsubprocess.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_queue.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_random.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_scproxy.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_sha1.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_sha256.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_sha3.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_sha512.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_socket.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_ssl.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_struct.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/_uuid.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/array.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/binascii.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/fcntl.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/grp.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/markupsafe/_speedups.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/math.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/mmap.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/pyexpat.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/resource.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/select.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/termios.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/unicodedata.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python3.7/lib-dynload/zlib.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/lib/python37.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/parse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/parse.app/Contents/Resources/zlib.cpython-37m-darwin.so" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Scrollbars.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Scrollbars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/raw_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/macho_dump" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/macho_dump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/macho_find" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/macho_find" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/macho_standalone" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/macho_standalone" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/modulegraph" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/modulegraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/py2applet" beforeDir="false" afterPath="$PROJECT_DIR$/venv/bin/py2applet" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,14 +114,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="203" column="25" selection-start-line="203" selection-start-column="25" selection-end-line="203" selection-end-column="25" />
+            <state relative-caret-position="160">
+              <caret line="265" column="28" selection-start-line="265" selection-start-column="28" selection-end-line="265" selection-end-column="28" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Scrollbars.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/parse.spec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -46,13 +169,18 @@
       <find>total_field_number</find>
       <find>lst.append</find>
       <find>json_obj</find>
-      <find>print</find>
       <find>get_fields</find>
       <find>bucket</find>
       <find>:</find>
       <find>index</find>
       <find>colon_index</find>
       <find>get_data_fields</find>
+      <find>print</find>
+      <find>simplegeneric</find>
+      <find>get_items(json</find>
+      <find>render_template</find>
+      <find>WebApp.html</find>
+      <find>templates/</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -64,18 +192,19 @@
         <option value="$PROJECT_DIR$/WebApp.html" />
         <option value="$PROJECT_DIR$/raw_data.csv" />
         <option value="$PROJECT_DIR$/templates/Download_Ready_Web_App.html" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/templates/WebApp.html" />
         <option value="$PROJECT_DIR$/templates/Filter_Data.html" />
         <option value="$PROJECT_DIR$/templates/Scrollbars.html" />
+        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/parse.py" />
+        <option value="$PROJECT_DIR$/parse.spec" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
+    <option name="x" value="-23" />
     <option name="y" value="23" />
-    <option name="width" value="1249" />
+    <option name="width" value="1284" />
     <option name="height" value="810" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -83,12 +212,33 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="KibanaWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KibanaWebApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KibanaWebApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KibanaWebApp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/venv/lib/python2.7" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/csv" />
       <recent name="$PROJECT_DIR$/templates" />
@@ -157,21 +307,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="23" width="1249" height="810" extended-state="0" />
+    <frame x="567" y="23" width="1284" height="810" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49561402" weight="0.3020031" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.50438595" side_tool="true" visible="true" weight="0.045602605" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.493266" visible="true" weight="0.29295328" />
+      <window_info id="Structure" order="1" sideWeight="0.506734" side_tool="true" visible="true" weight="0.29295328" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.17270195" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17270195" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.04479769" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.04178273" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.04178273" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.37047353" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.04178273" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -199,13 +349,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/raw_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/werkzeug/serving.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -220,32 +363,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Filter_Data.html" />
     <entry file="file://$PROJECT_DIR$/templates/Download_Ready_Web_App.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/WebApp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Scrollbars.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -256,13 +378,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="942" selection-start-line="942" selection-end-line="942" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/no-global-site-packages.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1285" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/WebApp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raw_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Scrollbars.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/parse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="203" column="25" selection-start-line="203" selection-start-column="25" selection-end-line="203" selection-end-column="25" />
+        <state relative-caret-position="160">
+          <caret line="265" column="28" selection-start-line="265" selection-start-column="28" selection-end-line="265" selection-end-column="28" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parse.spec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
         </state>
       </provider>
     </entry>

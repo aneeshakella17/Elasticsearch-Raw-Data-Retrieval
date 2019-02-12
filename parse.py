@@ -1,11 +1,8 @@
-import os
-import sys
-from pkgutil import simplegeneric
-import json
 import requests
+import json
+from flask import Flask, render_template, request, send_from_directory
 import csv
 from datetime import date
-from flask import Flask, render_template, request, send_from_directory, current_app
 import webbrowser
 import re
 
@@ -20,16 +17,13 @@ my_json, current_fields = {}, []
 
 
 
-@simplegeneric
 def get_items(obj):
     while False: # no items, a scalar object
         yield None
 
-@get_items.register(dict)
 def _(obj):
     return obj.iteritems() # json object
 
-@get_items.register(list)
 def _(obj):
     return enumerate(obj)
 
@@ -97,16 +91,22 @@ def filter_data(data, current_index, request):
 
 
     def populate_list(bucket):
+        new_count = 0;
         for entry in bucket["by_top_hit"]["hits"]["hits"]:
             count = len(request.keys());
             for key in request.keys():
                 if(key == "report_date" and request[key] != "ALL_KEYS"):
                     try:
-                     days = compare_two_dates(entry['_source'][key], request[key])
+                        days = compare_two_dates(entry['_source'][key][0:10], request[key])
                     except:
-                        t_index = entry['_source'][key].index('T')
-                        report_date = entry['_source'][key][0:t_index]
-                        days = compare_two_dates(report_date, request[key]);
+                        try:
+                            t_index = entry['_source'][key].index('T')
+                            report_date = entry['_source'][key][0:t_index]
+                            days = compare_two_dates(report_date, request[key]);
+                        except:
+                            report_date = entry['_source']['time'][0:10];
+                            days = compare_two_dates(report_date, request[key]);
+
 
                     if(days >= 0 and days <= 7):
                         count -= 1;
@@ -164,7 +164,7 @@ def get_fields(json_obj):
                else:
                    fields.append(key[0:colon_index]);
                    break;
-        elif(dic.get("date_histogram")):
+        elif(dic.get("date_histogram") or dic.get("date_range")):
             fields.append("report_date");
 
         if(dic.get("aggs")):
@@ -236,6 +236,8 @@ def get_data_fields(data, current_index):
                     t_index = bucket["key_as_string"].index('T')
                     report_date = bucket["key_as_string"][0:t_index];
                     lst_of_fields[index - 2][report_date] = 0;
+                elif(current_fields[index - 2] == "report_date"):
+                    lst_of_fields[index - 2][bucket["key"][0:10]] = 0;
                 else:
                     lst_of_fields[index - 2][bucket["key"]] = 0;
 
@@ -281,6 +283,11 @@ def parse():
     r = requests.post(url = URL, json = json_obj)
     data = r.json();
 
+    global current_fields, my_json;
+
+    my_json = data
+    current_fields = fields;
+
     data_fields = get_data_fields(data, current_index);
 
     sorted_data_fields = [];
@@ -292,15 +299,12 @@ def parse():
     for i in range(0, len(fields)):
         names.append(str(i));
 
-    global current_fields, my_json;
 
-    my_json = data
-    current_fields = fields;
 
     return render_template("Scrollbars.html", num_of_fields = len(fields), data_fields = sorted_data_fields, names = names)
 
 
 if __name__ == "__main__":
-    webbrowser.open('http://localhost:3000', new=1)
+    webbrowser.open('http://localhost:3000', new=0)
     app.run(port = 3000, debug = True)
 

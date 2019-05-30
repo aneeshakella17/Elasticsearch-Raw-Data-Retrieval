@@ -7,6 +7,7 @@ import os
 import re
 
 app = Flask(__name__);
+
 IP = "172.27.255.228"
 URL = "http://{0}:9200/_search?scroll=1m".format(IP)
 

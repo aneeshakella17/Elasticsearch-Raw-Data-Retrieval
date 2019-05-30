@@ -3,7 +3,7 @@ import json
 from flask import Flask, send_file, render_template, request, send_from_directory
 import csv
 from datetime import date, datetime
-import webbrowser
+import os
 import re
  
 # TODO:
@@ -179,13 +179,21 @@ def create_csv(lst, fname="raw_data.csv"):
 
                 for column, key in enumerate(keys):
 
-                    if (entry.get(key)):
-                        try:
-                            dic[key] = entry.get(key).encode('ascii', 'ignore').decode('ascii');
-                        except:
-                            dic[key] = entry.get(key);
+                    if (key == "report_date" or key == 'time') and entry.get(key) and 'T' in entry[key]:
+                        index = entry.get(key).index('T')
+                        if(key == "report_date"):
+                            dic[key] = entry.get(key)[0:index]
+                        elif(key == "time"):
+                            period = entry.get(key).index('.');
+                            dic[key] = entry.get(key)[index + 1:period]
                     else:
-                        dic[key] = 'NULL'
+                        if entry.get(key):
+                            try:
+                                dic[key] = entry.get(key).encode('ascii', 'ignore').decode('ascii');
+                            except:
+                                dic[key] = entry.get(key);
+                        else:
+                            dic[key] = 'NULL'
 
                 csv_writer.writerow(dic);
         else:
@@ -202,13 +210,13 @@ def render_webpage():
 
 @app.route('/download', methods=["GET", "POST"])
 def download():
-    print("FILENAME" + filename)
     return send_file(filename, mimetype='text/csv', attachment_filename=filename, as_attachment=True);
 
 
 # Analyzes the response to figure out which data the user wants to analyze more closely. For instance, within subtech,
 # the user can choose to analyze the different types of subtechs (assurance, security, ...), theaters (AMER, EPAC)
 def get_data_fields(data, current_index):
+
     def recurse(buckets, index, lst_of_fields):
         for bucket in buckets:
             if (index < current_index):
@@ -253,6 +261,11 @@ def filter():
 
     lst = filter_data(my_json, len(current_fields) + 1, request_dic);
     global filename;
+
+    for file in os.listdir('.'):
+        if file.endswith('.csv'):
+            os.remove(file);
+
     filename = create_csv(lst, str(datetime.now()) + "raw_output.csv");
     return render_template("Download_Ready_Web_App.html")
 

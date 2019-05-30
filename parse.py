@@ -5,11 +5,10 @@ import csv
 from datetime import date, datetime
 import os
 import re
- 
-# TODO:
-# STILL NEED TO ENSURE IT WORKS FOR ALL INPUT
+
 app = Flask(__name__);
-URL = "http://172.27.255.228:9200/_search?scroll=1m"
+IP = "172.27.255.228"
+URL = "http://{0}:9200/_search?scroll=1m".format(IP)
 
 SIZE = 1000;
 my_json, current_fields = {}, [];

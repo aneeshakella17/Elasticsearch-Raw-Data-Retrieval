@@ -1,4 +1,4 @@
 #KibanaWebApp
-This web app allows you to extract raw data from Kibana visualizations using the request query provided by Kibana.
-To run on a specific IP, please change the IP field above to the IP of the device in which Kibana is running. Then,
-execute python parse.py.
+This web app allows you to extract raw data from Kibana visualizations using the request query originally used to
+construct the visualizations. To run on a specific IP, please change the IP field above to the IP of the device
+in which Kibana is running. Then, gitexecute python parse.py.

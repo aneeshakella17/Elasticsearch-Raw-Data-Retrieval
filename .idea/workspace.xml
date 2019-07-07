@@ -3,112 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dccdf6ee-c010-4211-940f-17423b284846" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Download_Ready_Web_App.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scrollbars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/COLLECT-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/PKG-00.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/Tree-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/Tree-01.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/parse" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/warn-parse.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/parse/xref-parse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/raw_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/raw_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/MacOS.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/Nav.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/Parser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_AE.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_Ctl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_Dlg.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_Evt.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_File.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_Menu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_Qd.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_Res.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_Win.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_bisect.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_cffi_backend.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_codecs_cn.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_codecs_hk.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_codecs_iso2022.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_codecs_jp.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_codecs_kr.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_codecs_tw.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_collections.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_csv.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_ctypes.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_functools.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_hashlib.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_heapq.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_io.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_json.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_locale.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_multibytecodec.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_random.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_scproxy.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_socket.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_ssl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/_struct.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/array.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/audioop.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/binascii.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/bz2.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cPickle.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cStringIO.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/certifi/cacert.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/AUTHORS.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/LICENSE.APACHE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/LICENSE.BSD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography-2.4.2-py2.7.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography.hazmat.bindings._constant_time.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/cryptography.hazmat.bindings._openssl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/datetime.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/dbm.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/fcntl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/future_builtins.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/gestalt.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/grp.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/include/python2.7/pyconfig.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/itertools.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/lib/python2.7/config/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/libcrypto.1.1.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/libffi.6.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/libpython2.7.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/libreadline.7.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/libssl.1.1.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/libtinfow.6.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/libz.1.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/markupsafe._speedups.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/math.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/operator.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/pyexpat.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/readline.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/resource.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/select.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/strop.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/templates/Download_Ready_Web_App.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/templates/Scrollbars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/templates/WebApp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/termios.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/time.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/unicodedata.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/parse/zlib.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse.spec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/raw_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/WebApp.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/WebApp.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="332" lean-forward="true" selection-start-line="332" selection-end-line="332" />
+            <state relative-caret-position="51">
+              <caret line="310" column="12" selection-start-line="310" selection-start-column="12" selection-end-line="310" selection-end-column="12" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -206,9 +100,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="268" />
-    <option name="y" value="30" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="22" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="821" />
   </component>
@@ -311,11 +205,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="821" extended-state="6" />
-    <editor active="true" />
+    <frame x="22" y="23" width="1440" height="821" extended-state="1" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.40266666" visible="true" weight="0.22638889" />
-      <window_info id="Structure" order="1" sideWeight="0.5973333" side_tool="true" visible="true" weight="0.22638889" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.40210527" visible="true" weight="0.22638889" />
+      <window_info id="Structure" order="1" sideWeight="0.5978947" side_tool="true" visible="true" weight="0.22638889" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.328" />
@@ -325,7 +218,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.04479769" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.04178273" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.04" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.36666667" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.04178273" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -433,8 +326,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="332" lean-forward="true" selection-start-line="332" selection-end-line="332" />
+        <state relative-caret-position="51">
+          <caret line="310" column="12" selection-start-line="310" selection-start-column="12" selection-end-line="310" selection-end-column="12" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

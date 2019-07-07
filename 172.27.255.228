@@ -179,9 +179,8 @@ def create_csv(lst, fname="raw_data.csv"):
                 dic = {}
 
                 for column, key in enumerate(keys):
-                    if (key == "report_date" and entry.get(key) == None and entry.get("time") != None):
-                        dic["report_date"] = entry.get("time")[0:10]
-                    elif (key == "report_date" or key == "time") and 'T' in entry.get(key):
+
+                    if (key == "report_date" or key == 'time') and entry.get(key) and 'T' in entry[key]:
                         index = entry.get(key).index('T')
                         if(key == "report_date"):
                             dic[key] = entry.get(key)[0:index]
@@ -196,9 +195,6 @@ def create_csv(lst, fname="raw_data.csv"):
                                 dic[key] = entry.get(key);
                         else:
                             dic[key] = 'NULL'
-
-                if dic.get("report_date") == None:
-                    continue;
 
                 csv_writer.writerow(dic);
         else:

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dccdf6ee-c010-4211-940f-17423b284846" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dccdf6ee-c010-4211-940f-17423b284846" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="310" column="12" selection-start-line="310" selection-start-column="12" selection-end-line="310" selection-end-column="12" />
+            <state relative-caret-position="265">
+              <caret line="329" selection-start-line="329" selection-end-line="329" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -100,7 +98,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="22" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
@@ -205,9 +203,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="23" width="1440" height="821" extended-state="1" />
+    <frame x="22" y="23" width="1440" height="821" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.40210527" visible="true" weight="0.22638889" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.40210527" visible="true" weight="0.22638889" />
       <window_info id="Structure" order="1" sideWeight="0.5978947" side_tool="true" visible="true" weight="0.22638889" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -218,7 +216,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.04479769" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.04178273" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.36666667" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.36666667" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.04178273" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -326,8 +324,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="310" column="12" selection-start-line="310" selection-start-column="12" selection-end-line="310" selection-end-column="12" />
+        <state relative-caret-position="265">
+          <caret line="329" selection-start-line="329" selection-end-line="329" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
